@@ -1,4 +1,4 @@
-/* endpoint*/
+/* endpoint: /api/heroku-mysql-courses */
 import mysql from 'serverless-mysql';
 
 var db = mysql({
