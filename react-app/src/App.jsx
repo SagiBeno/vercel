@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Cats from './Cats'
 import Dogs from './Dogs'
+import Courses from './Courses'
 
 function App() {
   
@@ -19,6 +20,11 @@ function App() {
       <h1>Supabase dogs</h1>
       <div className="card">
         <Dogs />
+      </div>
+
+      <h1>Heroku MySQL courses</h1>
+      <div className="card">
+        <Courses />
       </div>
       
     </>
