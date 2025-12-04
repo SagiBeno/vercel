@@ -16,6 +16,7 @@ function App() {
         <Cats />
       </div>
 
+      <h1>Supabase dogs</h1>
       <div className="card">
         <Dogs />
       </div>
