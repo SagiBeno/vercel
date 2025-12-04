@@ -10,5 +10,17 @@ export default async function handler(req, res) {
         return res.status(200).json(result);
     }
 
-    return res.status(200).json('neon-cats endpoint works :)');
+    if (req.method == 'POST') {
+        // TODO - implement POST /api/neon-cats
+    }
+
+    if (req.method == 'PATCH') {
+        // TODO - implement PATCH /api/neon-cats
+    }
+
+    if (req.method == 'DELETE') {
+        // TODO - implement DELETE /api/neon-cats
+    }
+
+    return res.status(500).json([{error: 'Internal Server Error'}]);
 }
