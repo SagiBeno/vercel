@@ -15,7 +15,12 @@ export default class Courses extends React.Component {
                 console.log('Courses: ', courses)
                 this.setState({courses})
             })
-            .catch(console.warn)
+            .catch( async () => {
+                const res = await fetch('http://localhost:3333/courses');
+                const courses = await res.json();
+                console.log('courses: ', courses);
+                this.setState({courses});
+            })
     }
 
     render() {
