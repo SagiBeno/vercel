@@ -16,6 +16,6 @@ export default async function handler (req, res) {
         const result = await db.query('SELECT id, name FROM courses')
         console.log('result: ', result)
         await db.end()
-        return res.status(200).json(result)
+        return res.status(200).json({data: result})
     }
 }
