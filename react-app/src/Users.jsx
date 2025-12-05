@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { initializeApp } from "firebase/app";
-
+//import { db } from 'firebase';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 export default function Users(props) {
     const [users, setUsers] = useState([]);
@@ -15,10 +16,19 @@ export default function Users(props) {
     };
 
     const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-    useEffect(function() {
-        console.log('firebaseConfig.apiKey.length: ', firebaseConfig.apiKey?.length)
-        console.log('App: ', app)
+    useEffect(() => {
+        (async function () {
+            console.log('firebaseConfig.apiKey.length: ', firebaseConfig.apiKey?.length)
+            const docs =  await getDocs(collection(db, 'userdata'));
+            const docsData = docs.docs.map(doc => ({
+                id: doc.id,
+                data: doc.data()
+            }));
+            console.log('docsData: ', docsData)
+            setUsers(docsData);
+        })();
     }, []);
 
 
