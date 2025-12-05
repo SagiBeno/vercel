@@ -13,10 +13,10 @@ const port = 3333;
 
 console.log('dotenvConfig: ', dotenvConfig);
 var conn = mysql.createConnection({
-    host: 'TODO',
-    user: 'TODO',
-    password: 'TODO',
-    database: 'TODO'
+    host: dotenvConfig.parsed.MYSQL_HOST,
+    user: dotenvConfig.parsed.MYSQL_USER,
+    password: dotenvConfig.parsed.MYSQL_PASSWORD,
+    database: dotenvConfig.parsed.MYSQL_DATABASE
 });
 
 app.get('/courses', (req, res) => {
