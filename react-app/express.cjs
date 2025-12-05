@@ -1,13 +1,17 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-const app = express();
 
+const dotenv = require('dotenv');
+const dotenvConfig = dotenv.config();
+
+const app = express();
 app.use(express.json());
 app.use(cors());
 
 const port = 3333;
 
+console.log('dotenvConfig: ', dotenvConfig);
 var conn = mysql.createConnection({
     host: 'TODO',
     user: 'TODO',
