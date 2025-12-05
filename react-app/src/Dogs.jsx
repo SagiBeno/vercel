@@ -7,9 +7,9 @@ export default function Dogs(props) {
     useEffect(() => {
         (async () => {
             const dogsJson = await supabase.from('dogs').select();
-            //console.log('catsJson: ', dogsJson);
+            //console.log('dogsJson: ', dogsJson);
             //const dogs = await dogsJson.json();
-            //console.log('cats: ', dogs);
+            //console.log('dogs: ', dogs);
             setDogs(dogsJson);
         })().catch(console.warn)
     }, []);
